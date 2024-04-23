@@ -1,4 +1,4 @@
-name: '🔴 Terraform Database Destroy'
+name: '🧨 Terraform Database Destroy'
 
 on:
   workflow_dispatch:
