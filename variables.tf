@@ -25,7 +25,7 @@ variable "db_name" {
 variable "db_allocated_storage" {
   description = "O espaço de armazenamento alocado para o banco de dados, em gigabytes (GB). Isso define o tamanho inicial do banco de dados."
   type        = number
-  default     = 5
+  default     = 10
 }
 
 variable "db_instance_class" {
