@@ -8,6 +8,10 @@ locals {
   prefix = "postech-5soat-grupo-25"
 }
 
+# Variáveis com dados sensíveis que não devem ser expostas no código
+variable "AWS_DB_USERNAME" {}
+variable "AWS_DB_PASSWORD" {}
+
 # Cria uma instância do banco de dados PostgreSQL na AWS RDS
 resource "aws_db_instance" "postgres" {
   identifier           = "${local.prefix}-rds"
