@@ -51,3 +51,15 @@ variable "db_publicly_accessible" {
   type        = bool
   default     = false
 }
+
+variable "db_security_group_id" {
+  description = "O ID do grupo de segurança para o banco de dados PostgreSQL. Utilizar este ID para associar a instância do RDS ao grupo de segurança correto."
+  type        = string
+  default     = "sg-0af4dca7868d0c91d"
+}
+
+variable "db_subnet_group_name" {
+  description = "O nome do grupo de sub-redes para o banco de dados PostgreSQL. Utilizado para associar instâncias do RDS a sub-redes específicas dentro da VPC."
+  type        = string
+  default     = "postech-5soat-grupo-25-rds-subnet-group"
+}
