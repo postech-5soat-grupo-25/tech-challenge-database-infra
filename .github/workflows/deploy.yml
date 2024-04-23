@@ -1,10 +1,14 @@
-name: 'Terraform CI/CD database infra'
+name: 'Terraform Database Deploy'
 
 on:
   push:
     branches:
       - main
+    paths:
+      - '**/*.tf'
   pull_request:
+    paths:
+      - '**/*.tf'
 
 env:
   AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
@@ -14,27 +18,27 @@ env:
 
 jobs:
   terraform:
-    name: 'terraform'
+    name: 'Terraform Deploy'
     runs-on: ubuntu-latest
 
     steps:
-    - name: checkout code
+    - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: setup terraform
+    - name: Setup terraform
       uses: hashicorp/setup-terraform@v1
       with:
         terraform_version: 1.0.0
 
-    - name: terraform init
+    - name: Run terraform init
       run: terraform init
 
-    - name: terraform format check
-      run: terraform fmt -check
+    - name: Run terraform format check
+      run: terraform fmt --check
 
-    - name: terraform plan
+    - name: Run terraform plan
       run: terraform plan
 
-    - name: terraform apply
+    - name: Run terraform apply
       if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-      run: terraform apply -auto-approve
+      run: terraform apply --auto-approve
