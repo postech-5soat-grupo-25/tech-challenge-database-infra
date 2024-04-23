@@ -1,4 +1,4 @@
-name: '🔥 Terraform Database Destroy'
+name: '🔴 Terraform Database Destroy'
 
 on:
   workflow_dispatch:
@@ -10,8 +10,8 @@ env:
   AWS_DB_USERNAME: ${{ secrets.AWS_DB_USERNAME }}
 
 jobs:
-  destroy:
-    name: 'Terraform Destroy'
+  terraform:
+    name: 'Destroy'
     runs-on: ubuntu-latest
 
     steps:
