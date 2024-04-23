@@ -1,4 +1,4 @@
-name: '🔥 Terraform Database Destroy'
+name: '🔴 Terraform Database Destroy'
 
 on:
   workflow_dispatch:
@@ -6,12 +6,12 @@ on:
 env:
   AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
   AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-  AWS_DB_PASSWORD:  ${{ secrets.AWS_DB_PASSWORD }}
-  AWS_DB_USERNAME: ${{ secrets.AWS_DB_USERNAME }}
+  TF_VAR_AWS_DB_USERNAME: ${{ secrets.AWS_DB_USERNAME }}
+  TF_VAR_AWS_DB_PASSWORD: ${{ secrets.AWS_DB_PASSWORD }}
 
 jobs:
-  destroy:
-    name: 'Terraform Destroy'
+  terraform:
+    name: 'Destroy'
     runs-on: ubuntu-latest
 
     steps:
