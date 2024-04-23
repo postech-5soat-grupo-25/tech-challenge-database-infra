@@ -55,7 +55,7 @@ variable "db_publicly_accessible" {
 variable "db_security_group_id" {
   description = "O ID do grupo de segurança para o banco de dados PostgreSQL. Utilizar este ID para associar a instância do RDS ao grupo de segurança correto."
   type        = string
-  default     = "sg-0af4dca7868d0c91d"
+  default     = "sg-0e2f6931b81c1e95b"
 }
 
 variable "db_subnet_group_name" {
