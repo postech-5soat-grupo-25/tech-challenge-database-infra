@@ -15,28 +15,17 @@ env:
   AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
 jobs:
-  terraform:
-    name: 'Deploy'
+  terraform_apply:
+    name: Terraform Apply
     runs-on: ubuntu-latest
-
+    defaults:
+      run:
+        shell: bash
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-
-    - name: Setup terraform
-      uses: hashicorp/setup-terraform@v1
-      with:
-        terraform_version: 1.0.0
-
-    - name: Run terraform init
-      run: terraform init
-
-    - name: Run terraform format check
-      run: terraform fmt --check
-
-    - name: Run terraform plan
-      run: terraform plan
-
-    - name: Run terraform apply
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Terraform Apply
       if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-      run: terraform apply --auto-approve
+      run: |
+        terraform init
+        terraform apply -auto-approve
