@@ -23,6 +23,10 @@ Certifique-se de ter os seguintes secrets configurados:
   - `AWS_SECRET_ACCESS_KEY`
   - `AWS_DEFAULT_REGION`
 
+- A nível de **repositórios**:
+  - `DB_URL`
+
+O secret `DB_URL` é utilizado para deploy dos scripts
 
 ### Deploy Automático via GitHub Actions
 
@@ -41,9 +45,7 @@ A destruição da infraestrutura pode ser iniciada manualmente através do **Git
 
 ## Estrutura do Projeto
 
-- `backend.tf`: Configuração do backend do Terraform para armazenamento do estado e bloqueio.
-- `main.tf`: Definição dos recursos da AWS para a instância do banco de dados PostgreSQL.
-- `variables.tf`: Variáveis utilizadas na configuração do Terraform.
-- `outputs.tf`: Saídas configuradas para fornecer informações úteis após o deploy.
+- `providers.tf`: Configuração do backend do Terraform para armazenamento do estado e bloqueio.
+- `database.tf`: Definição dos recursos da AWS para a instância do banco de dados PostgreSQL.
 - `.github/workflows/deploy.yml`: Workflow do GitHub Actions para o deploy da infraestrutura.
 - `.github/workflows/destroy.yml`: Workflow do GitHub Actions para a destruição da infraestrutura.

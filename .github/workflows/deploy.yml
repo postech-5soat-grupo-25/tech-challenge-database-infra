@@ -1,14 +1,9 @@
-name: '🚀 Terraform Database Deploy'
+name: 'Terraform Database Deploy'
 
 on:
   push:
     branches:
-      - main
-    paths:
-      - '**/*.tf'
-  pull_request:
-    paths:
-      - '**/*.tf'
+      - master
 
 env:
   AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
