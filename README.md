@@ -10,6 +10,10 @@ A infraestrutura criada por este repositório inclui:
 
 ## Como Utilizar
 
+## Configuração da Infra de Rede
+
+Para deploy correto dessa infra é necessário preencher o `vpc_id` no arquivo `security-group.tf` e as subnets públicas no arquivo `database.tf`. Todas essas informações se encontram no painel AWS da sua conta e para esse projeto são criadas juntamente com a infra do cluster kubernetes
+
 ### Configuração dos Secrets
 
 Certifique-se de ter os seguintes secrets configurados:
@@ -18,9 +22,7 @@ Certifique-se de ter os seguintes secrets configurados:
   - `AWS_ACCESS_KEY_ID`
   - `AWS_SECRET_ACCESS_KEY`
   - `AWS_DEFAULT_REGION`
-- A nível de **repositório**:
-  - `AWS_DB_USERNAME`
-  - `AWS_DB_PASSWORD`
+
 
 ### Deploy Automático via GitHub Actions
 
