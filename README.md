@@ -1,4 +1,4 @@
-# Database | PosTech 5SOAT • Grupo 25
+# `database` | PosTech 5SOAT • Grupo 25
 
 Este repositório contém a configuração necessária para o deploy de uma infraestrutura de banco de dados PostgreSQL na AWS usando Terraform. O objetivo é automatizar a criação de uma instância segura e configurada do banco de dados PostgreSQL na AWS RDS, facilitando o gerenciamento e a manutenção da infraestrutura de banco de dados.
 
@@ -47,5 +47,6 @@ A destruição da infraestrutura pode ser iniciada manualmente através do **Git
 
 - `providers.tf`: Configuração do backend do Terraform para armazenamento do estado e bloqueio.
 - `database.tf`: Definição dos recursos da AWS para a instância do banco de dados PostgreSQL.
+- `security-group.tf`: Definição das configurações de grupo de segurança.
 - `.github/workflows/deploy.yml`: Workflow do GitHub Actions para o deploy da infraestrutura.
 - `.github/workflows/destroy.yml`: Workflow do GitHub Actions para a destruição da infraestrutura.
