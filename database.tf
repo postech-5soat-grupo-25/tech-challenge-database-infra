@@ -1,9 +1,9 @@
 resource "aws_db_subnet_group" "db_subnet_group" {
   name = "db-subnet-group"
   subnet_ids = [
-    "subnet-08217fefde1f7f9d9",
-    "subnet-0eeeb1ae7b3a87560",
-    "subnet-0a415ab2f2b03bf0a"
+    "subnet-0b4a000eb73ee4c7d",
+    "subnet-039d3894dca687df0",
+    "subnet-0b301100af051caf3"
     ]
 }
 
